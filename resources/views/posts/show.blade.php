@@ -9,9 +9,10 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1 class="title">
+        <h1>Blog Name</h1>
+        <h2 class="title">
             {{ $post->title }}
-        </h1>
+        </h2>
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
@@ -19,7 +20,7 @@
             </div>
         </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/">[back]</a>
         </div>
     </body>
 </html>
