@@ -43,5 +43,11 @@ public function update(PostRequest $request, Post $post)
     return redirect('/posts/' . $post->id);
 }
 
+public function delete(Post $post)
+{
+    $post->delete();
+    return redirect('/');
+}
+
 }
 ?>
