@@ -11,6 +11,11 @@
     <body>
         <h1>Blog Name</h1>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+          @csrf
+          @method('DELETE')
+          <button type="button">delete</button> 
+        </form>
         <h2 class="title">
             {{ $post->title }}
         </h2>
@@ -23,5 +28,15 @@
         <div class="footer">
             <a href="/">[back]</a>
         </div>
+        <script>
+            let form_delete = document.getElementById('form_delete');
+ 
+            form_delete.addEventListener('click', function() {
+  
+            if(confirm("削除すると復元できません。 \n 本当に削除しますか？")){
+               form_delete.submit();  
+              }
+             });
+        </script>
     </body>
 </html>
